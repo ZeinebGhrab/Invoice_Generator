@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins';
+        color: #14243E;
+      }
+      {{css}}
+    </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="container">
+      <div class="logo">
+         <img src={{host}}/zeta.png class="small-image"/>
+      </div>
+      <div class="invoiceSection">
+          <h3 class="title">{{invoiceLabel}}</h3>
+          <b class="data1">Date :</b><i  class="data2">{{changeDate}}</i><br/>
+          <b class="data1">  {{numInvoice}}: </b><i class="data2" >{{number}}/{{creationYear}}</i><br/> 
+          <b class="data1">{{customerRef}} : </b><i class="data2">Ref.{{customer.ref}}.{{customer.creationYear}}</i> 
+      </div>
+    </div>
+    <div class="clientSection">
+      <h3 class="title">{{customerLabel}}</h3>
+      <b class="data1">{{company}}:</b><i class="data2">{{customer.companyName}}</i><br/>
+      {{#each customer.companyData}}
+        <b class="data1">{{title}} : </b> <i class="data2">{{value}}</i><br/>
+      {{/each}} 
+    </div>
+  </div>
+  <div class="content">
+  <div class="items">
+    <table>
+      <thead>
+          <tr>
+              <th>#</th>
+              <th>Description</th>
+              <th>QTE</th>
+              <th >{{unitPrice}} <br/>{{excludingTax}}</th>
+              {{#if showColumnTaxPercentage}}
+              <th >{{taxPercentageLabel}} %</th>
+              {{/if}}
+              {{#if showColumnDiscount}}
+              <th >{{discount}}</th>
+              {{/if}}
+              {{#if showColumnDiscount}}
+              <th >{{totExcludingTax}}<br/>{{excludingTax}}</th>
+              {{/if}}
+          </tr>
+      </thead>
+      <tbody>
+         {{#each this.items }}
+              <tr>
+                  <td class="center">{{counter}}</td>
+                  <td>{{designation}}</td>
+                  <td class="center">{{quantity}}</td>
+                  <td class="right">{{unitPrice}}</td>
+                  {{#if showColumnTaxPercentage}}
+                  <td class="center">{{taxPercentage}}%</td>
+                  {{/if}}
+                  {{#if showColumnDiscount}}
+                  <td class="center">{{discount}}%</td>
+                  <td class="right">{{price}}</td>
+                  {{/if}}
+              </tr>
+          {{/each}}
+      </tbody>    
+    </table>
+    <div class="container">
+      {{#if showColumnTaxPercentage}}
+      <table>
+        <thead>
+            <tr>
+                <th>{{netAmount}}</th>
+                <th>{{taxPercentageLabel}}%</th>
+                <th>{{totExcludingTax}}<br/>{{excludingTax}}</th>
+            </tr>
+        </thead>
+        <tbody>
+          {{#each baseAndVatAmount}}
+            <tr>
+                <td class="right">{{base}}</td>
+                <td class="center">{{tax}}</td>
+                <td class="right">{{vatAmount}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+      </table>
+      {{/if}}
+      <table class="table3">
+        <tr>
+            <th>{{subtot}}</th>
+            <td class="right">{{totalPrice.partialTot}}</td>
+        </tr>
+        {{#if showColumnDiscount}}
+        <tr>
+            <th>{{discount}}</th>
+            <td class="right">{{totalPrice.totalDis}}</td>
+        </tr>
+        {{/if}} 
+        <tr>
+            <th>{{discTotal}}</th>
+            <td class="right">{{totalPrice.totalAfterDisc}}</td>
+        </tr> 
+        {{#if showColumntaxPercentage}}
+        <tr>
+            <th>zz {{taxPercentageLabel}}</th>
+            <td class="right">{{totalPrice.totalTva}}</td>
+        </tr>
+        {{/if}}
+        {{#if showAdditional}}
+        {{#each this.additionalInvoiceFees}}
+        <tr>
+          <th>{{title}}</th>
+          <td class="right">{{value}}</td>
+        </tr>
+        {{/each}}
+        {{/if}}
+        <tr>
+            <th>{{totalT}}</th>
+            <td class="right">{{totalPrice.totalTtc}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <hr>
+    <b> ZETA-BOX SARL</b><br/>
+    Ave Hedi Nouira, Emna City B51 3027 Sfax Eljadida، Sfax,Tunisie<br/>
+    Identifiant unique: 1569719X | Matricule Fiscale: 1569719X/A/M/000<br/>
+    IBAN: TN5904307069005406982860 | BIC: BESTUTNTTINT 
+  </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invoices",
+  "info": {
+    "singularName": "invoice",
+    "pluralName": "invoices",
+    "displayName": "Invoice",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "table.invoice-table"
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::customer.customer"
+    },
+    "additionalInvoiceFees": {
+      "type": "component",
+      "repeatable": true,
+      "component": "invoice-data.additional-fees"
+    },
+    "number": {
+      "type": "biginteger"
+    },
+    "creationYear": {
+      "type": "biginteger"
+    }
+  }
+}

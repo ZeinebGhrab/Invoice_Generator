@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_customer_data_customer_company_data",
+  "info": {
+    "displayName": "customerCompanyData",
+    "icon": "arrowRight"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quotes",
+  "info": {
+    "singularName": "quote",
+    "pluralName": "quotes",
+    "displayName": "Quote"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ref": {
+      "type": "string"
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::customer.customer"
+    },
+    "date": {
+      "type": "date"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "table.invoice-table"
+    }
+  }
+}

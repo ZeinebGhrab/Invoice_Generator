@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_table_invoice_tables",
+  "info": {
+    "displayName": "InvoiceTable",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "designation": {
+      "type": "text"
+    },
+    "quantity": {
+      "type": "decimal"
+    },
+    "unitPrice": {
+      "type": "float"
+    },
+    "taxPercentage": {
+      "type": "decimal"
+    },
+    "discount": {
+      "type": "float"
+    }
+  }
+}

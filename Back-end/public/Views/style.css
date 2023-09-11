@@ -1,0 +1,107 @@
+@media print {
+  html {
+    -webkit-print-color-adjust: exact;
+  }
+  @media print { 
+    .top-bar {
+        position: fixed;
+        top: 0;
+        height: 50px;
+        margin-bottom:3000px;
+        break-after: auto;
+        margin-block-end:250px;
+      }
+    
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      break-after: auto;
+      margin-left: 10px;
+      margin-bottom: 20px;
+    }
+    .items {
+    position: static;
+    top: 50px;
+    margin-top: 300px;
+  }
+    }
+      .container {
+        display: flex;   
+      }
+    
+      .table3 {
+        margin-left: 40px;
+      }
+    
+      .logo {
+        flex: 1; 
+        margin-top: 20px;
+        margin-left: 25px;
+      }
+      .small-image {
+        width:40%;
+      }
+      table {
+        border-collapse: collapse; 
+        margin-bottom: 40px;
+        border-color:#efefef;
+        border-style:solid;
+        border-width:4px;
+        width:100%;
+      }
+      
+      th, td {
+        border: 1px solid #efefef; 
+        padding: 10px; 
+        text-align: left; 
+      }
+      
+      th {
+        background-color: #f9fafa; 
+        color:#7f8080;
+        padding: 10px; 
+      }
+      
+      .clientSection {  
+        margin-bottom: 60px;
+        margin-left: 25px;
+        margin-right: 10px;
+      }
+
+      .invoiceSection{
+        margin-top: 65px;
+        margin-bottom: 20px;
+        margin-left: 70px;
+        margin-right: 25px;
+      }
+      .content{
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-top:80px;
+      }
+
+      .data2{
+        margin-right:25px;
+      }
+
+      .data1{
+        margin-right: 30px;
+      }
+
+      .title{
+        margin-bottom: 20px;
+        margin-left:30px;
+       }
+
+      .hr {
+         width: 100%;
+         margin-right: 25px;
+         border: 1px solid black;
+      }
+      .center{
+        text-align: center;
+      }
+      .right{
+        text-align: right;
+      }
+    }

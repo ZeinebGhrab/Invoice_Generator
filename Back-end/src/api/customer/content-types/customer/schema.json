@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customers",
+  "info": {
+    "singularName": "customer",
+    "pluralName": "customers",
+    "displayName": "Customer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "companyName": {
+      "type": "string"
+    },
+    "companyData": {
+      "displayName": "customerCompanyData",
+      "type": "component",
+      "repeatable": true,
+      "component": "customer-data.customer-company-data"
+    },
+    "currency": {
+      "type": "enumeration",
+      "enum": [
+        "TND",
+        "EUR",
+        "USD",
+        "CAD"
+      ]
+    },
+    "country": {
+      "type": "enumeration",
+      "enum": [
+        "TUNISIA",
+        "GERMANY",
+        "FRANCE",
+        "USA",
+        "CANADA"
+      ]
+    },
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "FRENCH",
+        "ENGLISH"
+      ]
+    },
+    "ref": {
+      "type": "biginteger"
+    },
+    "creationYear": {
+      "type": "biginteger"
+    }
+  }
+}

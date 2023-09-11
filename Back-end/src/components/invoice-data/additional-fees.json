@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_invoice_data_additional_fees",
+  "info": {
+    "displayName": "additionalFees",
+    "icon": "filter"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "value": {
+      "type": "float"
+    }
+  }
+}
